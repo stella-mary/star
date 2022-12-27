@@ -11,7 +11,7 @@ import { render } from "react-dom";
 
 
 const getDatafromValues = () => {
-    const data = localStorage.getItem("formValues");
+    const data = localStorage.getItem("feedbacks");
     if (data) {
         return JSON.parse(data);
     } else {
@@ -22,7 +22,7 @@ const getDatafromValues = () => {
 export default function Feedback() {
 
     // const initialValues = { name: "", mobile: "", comments: "" };
-    const [formValues, setFormValues] = useState(getDatafromValues());
+    const [feedbacks, setfeedbacks] = useState(getDatafromValues());
     const navigate = useNavigate()
 
     const [name, setName] = useState("")
@@ -43,18 +43,18 @@ export default function Feedback() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // setFormErrors(validate(formValues));
+        // setFormErrors(validate(feedbacks));
         let newFormValue = {
-            id: formValues.length + 1,
+            id: feedbacks.length + 1,
             name: name,
             mobile: mobileNumber,
             rating: rating,
             comments: comments,
-            isRecommended: yesOrNo,
+            yesOrNo: yesOrNo,
             accepted: ""
 
         };
-        setFormValues([...formValues, newFormValue])
+        setfeedbacks([...feedbacks, newFormValue])
         setName("")
         setMobileNumber("")
         setComments("")
@@ -62,8 +62,8 @@ export default function Feedback() {
 
 
         localStorage.setItem(
-            "formValues",
-            JSON.stringify([...formValues, newFormValue])
+            "feedbacks",
+            JSON.stringify([...feedbacks, newFormValue])
         );
         console.log(JSON.stringify(newFormValue));
         navigate('/Final')
