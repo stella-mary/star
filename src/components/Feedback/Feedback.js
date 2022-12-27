@@ -7,6 +7,8 @@ import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import { navigate, useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { render } from "react-dom";
+import { FaStar } from "react-icons/fa";
+
 
 
 
@@ -36,7 +38,6 @@ export default function Feedback() {
     const ratingChanged = (newRating) => {
         console.log(newRating);
     };
-
 
 
     const [hover, setHover] = useState(0);
@@ -122,8 +123,8 @@ export default function Feedback() {
 
 
                 <div className="Icons">
-                    <ThumbUpOffAltIcon value={yesOrNo} onClick={(e) => setYesOrNo("Yes")} />
-                    <ThumbDownOffAltIcon value={yesOrNo} onClick={(e) => setYesOrNo("No")} />
+                    <ThumbUpOffAltIcon style={{ color: "green", fontSize: "30px" }} value={yesOrNo} onClick={(e) => setYesOrNo("Yes")} />
+                    <ThumbDownOffAltIcon style={{ color: "red", fontSize: "30px" }} value={yesOrNo} onClick={(e) => setYesOrNo("No")} />
                 </div>
                 <p className='para'>Comments</p>
                 <p className='para'>

@@ -94,7 +94,23 @@ export default function Final({ children }) {
                                 </TableCell> */}
                                 <TableCell align="right">{row.name}</TableCell>
                                 <TableCell align="right">{row.mobile}</TableCell>
-                                <TableCell align="right">{row.rating}</TableCell>
+                                {/* <TableCell align="right">{row.rating}</TableCell> */}
+                                <TableCell align="right">
+                                    {
+                                        [...Array(parseInt(row.rating))].map((star, index) => {
+                                            index += 1;
+                                            return (
+                                                <button
+                                                    type="button"
+                                                    key={index}
+                                                    className={"on"}
+                                                >
+                                                    <span className="star">&#9733;</span>
+                                                </button>
+
+                                            );
+                                        })}
+                                </TableCell>
                                 <TableCell align="right">{row.yesOrNo}</TableCell>
                                 <TableCell align="right">{row.comments}</TableCell>
                                 {/* <TableCell align="right">{row.accepted}</TableCell> */}
@@ -106,12 +122,12 @@ export default function Final({ children }) {
                                             <p>Rejected</p>
                                         ) : (
                                             <div>
-                                                <ThumbUpOffAltIcon
+                                                <FaThumbsUp
                                                     style={{ color: "green", fontSize: "30px" }}
                                                     // value={acceptedOrRejected}
                                                     onClick={() => updateAcceptance(row.id, "Accepted")}
                                                 />
-                                                <ThumbUpOffAltIcon
+                                                <FaThumbsDown
                                                     style={{ color: "red", fontSize: "30px" }}
                                                     // value={acceptedOrRejected}
                                                     onClick={() => updateAcceptance(row.id, "Rejected")}
