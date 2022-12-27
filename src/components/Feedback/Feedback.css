@@ -60,3 +60,6 @@ button {
     cursor: pointer;
   }
  
+  .container{
+    display: flex;
+  }

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import './Feedback.css'
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
-import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
-import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { navigate, useNavigate } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { render } from "react-dom";
@@ -123,8 +123,8 @@ export default function Feedback() {
 
 
                 <div className="Icons">
-                    <ThumbUpOffAltIcon style={{ color: "green", fontSize: "30px" }} value={yesOrNo} onClick={(e) => setYesOrNo("Yes")} />
-                    <ThumbDownOffAltIcon style={{ color: "red", fontSize: "30px" }} value={yesOrNo} onClick={(e) => setYesOrNo("No")} />
+                    <ThumbUpIcon style={{ fontSize: "30px", color: yesOrNo === "yes" ? "green" : "black" }} value={yesOrNo} onClick={(e) => setYesOrNo("yes")} />
+                    <ThumbDownIcon style={{ fontSize: "30px", color: yesOrNo === "no" ? "red" : "black" }} value={yesOrNo} onClick={(e) => setYesOrNo("no")} />
                 </div>
                 <p className='para'>Comments</p>
                 <p className='para'>

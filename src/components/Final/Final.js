@@ -121,7 +121,7 @@ export default function Final({ children }) {
                                         ) : row.accepted === "Rejected" ? (
                                             <p>Rejected</p>
                                         ) : (
-                                            <div>
+                                            <div className='container'>
                                                 <FaThumbsUp
                                                     style={{ color: "green", fontSize: "30px" }}
                                                     // value={acceptedOrRejected}
