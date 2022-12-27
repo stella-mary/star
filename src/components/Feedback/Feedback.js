@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import './Login.css'
+import './Feedback.css'
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
@@ -19,14 +19,14 @@ const getDatafromValues = () => {
     }
 };
 
-export default function Login() {
+export default function Feedback() {
 
     // const initialValues = { name: "", mobile: "", comments: "" };
     const [formValues, setFormValues] = useState(getDatafromValues());
     const navigate = useNavigate()
 
     const [name, setName] = useState("")
-    const [mobile, setMobile] = useState("")
+    const [mobileNumber, setMobileNumber] = useState("")
     const [rating, setRating] = useState(0);
     const [comments, setComments] = useState("")
 
@@ -46,17 +46,17 @@ export default function Login() {
         // setFormErrors(validate(formValues));
         let newFormValue = {
             id: formValues.length + 1,
-            name,
-            mobile,
-            rating,
-            comments,
-            yesOrNo,
+            name: name,
+            mobile: mobileNumber,
+            rating: rating,
+            comments: comments,
+            isRecommended: yesOrNo,
             accepted: ""
 
         };
-        setFormValues(newFormValue)
+        setFormValues([...formValues, newFormValue])
         setName("")
-        setMobile("")
+        setMobileNumber("")
         setComments("")
         setRating("")
 
@@ -86,8 +86,8 @@ export default function Login() {
                 <p className='para'>
                     <input
                         type="mobile"
-                        value={mobile}
-                        onChange={(e) => setMobile(e.target.value)}
+                        value={mobileNumber}
+                        onChange={(e) => setMobileNumber(e.target.value)}
                     />
                 </p>
                 <p className='para'>How would you rate our service?</p>

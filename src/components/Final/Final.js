@@ -33,10 +33,10 @@ const rows = [
 
 
 export default function Final() {
-    const [data, setDate] = useState(getDatafromValues())
+    const [data, setData] = useState(getDatafromValues())
     const [yesOrNo, setYesOrNo] = useState("")
     const [clicked, setClicked] = useState(false)
-    const [clicked1, setClicked1] = useState(false)
+    // const [clicked1, setClicked1] = useState(false)
     console.log(yesOrNo)
     return (
         <div>
@@ -65,12 +65,12 @@ export default function Final() {
                                 <TableCell align="right">{row.name}</TableCell>
                                 <TableCell align="right">{row.mobile}</TableCell>
                                 <TableCell align="right">{row.rating}</TableCell>
-                                <TableCell align="right">{row.yesOrNo}</TableCell>
+                                <TableCell align="right">{row.isRecommended}</TableCell>
                                 <TableCell align="right">{row.comments}</TableCell>
                                 {/* <TableCell align="right">{row.accepted}</TableCell> */}
                                 <TableCell><div className="Icons">
                                     {clicked ? <p>Accepted</p> : (<ThumbUpOffAltIcon value={yesOrNo} onClick={(e) => setClicked("Accepted")} />)}
-                                    {clicked1 ? <p>Rejected</p> : (<ThumbDownOffAltIcon value={yesOrNo} onClick={(e) => setClicked1("Rejected")} />)}
+                                    {clicked ? <p>Rejected</p> : (<ThumbDownOffAltIcon value={yesOrNo} onClick={(e) => setClicked("Rejected")} />)}
                                 </div></TableCell>
                             </TableRow>
                         ))}
