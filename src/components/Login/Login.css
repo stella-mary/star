@@ -1,0 +1,62 @@
+.para{
+    text-align: left;
+    font-size: 20px;
+}
+
+h1{
+
+}
+
+input{
+    padding: 5px;
+    border-radius: 10px;
+    width: 25%;
+}
+
+.Head{
+    text-align: center;
+
+}
+
+stack{
+    font-size: 30px;
+}
+
+.Icons{
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+.on {
+    color: red;
+    font-size: 20px;
+  }
+
+  .off {
+    color: green;
+    font-size: 20px;
+  }
+
+  .submit{
+    background-color:chocolate;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+    width: 15%;
+  }
+
+  .submit:hover{
+    background-color:brown;
+  }
+
+  .Icons{
+    cursor: pointer;
+  }
+ 
