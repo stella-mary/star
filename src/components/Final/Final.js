@@ -30,8 +30,8 @@ const getDatafromValues = () => {
 
 const rows = [
     // getDatafromValues("feedbacks")
-];
 
+];
 
 
 
